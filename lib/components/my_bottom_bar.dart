@@ -9,7 +9,7 @@ class MyBottomBar extends StatelessWidget {
       width: double.infinity,
       height: 80,
       color: Colors.blue,
-      child: Icon(Icons.favorite),
+      child: Icon(Icons.add),
     );
   }
 }

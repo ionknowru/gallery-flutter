@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../components/body.dart';
+import 'package:gallery_flutter/components/app_bar.dart';
 import '../components/my_bottom_bar.dart';
+
+import 'package:gallery_flutter/widgets/photos_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -10,16 +12,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: Body(),
+      body: Photos(),
       // Just decoration
       bottomNavigationBar: MyBottomBar(),
-    );
-  }
-
-  AppBar buildAppBar() {
-    return AppBar(
-      elevation: 0,
-      title: Text('My Gallery from unsplash API'),
     );
   }
 }

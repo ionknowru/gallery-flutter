@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:gallery_flutter/pages/photo_page.dart';
+
 import '../models/data_from_api.dart';
 
 class Photos extends StatefulWidget {
@@ -20,12 +22,18 @@ class _PhotosState extends State<Photos> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: data == null ? 0 : data.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            child: Column(
-              children: [
-                Container(
+      itemCount: data == null ? 0 : data.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => PhotoPage()
+                  ));
+                },
+                child: Container(
                   margin: const EdgeInsets.all(10),
                   child: Column(
                     children: [
@@ -62,10 +70,11 @@ class _PhotosState extends State<Photos> {
                     ],
                   ),
                 ),
-              ],
-            ),
-          );
-        },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
