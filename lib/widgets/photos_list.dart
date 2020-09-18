@@ -35,9 +35,30 @@ class _PhotosState extends State<Photos> {
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        '${data[index]['user']['username']}',
-                      )
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '${data[index]['user']['username']}',
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  '${data[index]['likes']}',
+                                ),
+                                Icon(
+                                  Icons.favorite
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
